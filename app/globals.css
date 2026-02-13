@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-brand-navy text-white scroll-smooth;
+  /* Прячем стандартную полосу прокрутки, оставляя скролл */
+  scrollbar-width: none;
+}
+
+body {
+  font-family: theme("fontFamily.sans");
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.section-container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-title {
+  @apply font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-brand-gold mb-6;
+}
+
+.section-subtitle {
+  @apply text-base sm:text-lg text-gray-300 max-w-2xl;
+}
+
+.glass-card {
+  @apply bg-slate-900/80 border border-white/10 backdrop-blur-md shadow-card;
+}
+
+/* Glitch-эффект для заголовка на hero */
+@keyframes glitch-jump {
+  0% {
+    transform: translate(0, 0);
+    text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+  }
+  50% {
+    transform: translate(2px, -2px);
+    text-shadow: 3px 0 #ff00ff, -3px 0 #00ffff;
+  }
+  100% {
+    transform: translate(0, 0);
+    text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff;
+  }
+}
+
+.glitch-hover:hover {
+  animation: glitch-jump 300ms ease-in-out;
+}
+
+/* Глобальный шум и легкие «царапины» поверх фона */
+.page-noise {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.14) 0,
+      rgba(148, 163, 184, 0.14) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(15, 23, 42, 0.7) 0,
+      rgba(15, 23, 42, 0.7) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    radial-gradient(circle at 10% 20%, rgba(148, 163, 184, 0.18), transparent 55%),
+    radial-gradient(circle at 80% 70%, rgba(30, 64, 175, 0.24), transparent 55%);
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+}
+
+/* Небольшие рваные стикеры для карточек */
+.sticker-label {
+  clip-path: polygon(0 0, 100% 0, 96% 40%, 100% 80%, 0 100%, 4% 60%, 0 20%);
+}
