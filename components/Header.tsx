@@ -19,7 +19,8 @@ export function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/70 backdrop-blur-xl"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl"
+      style={{ position: 'fixed' }}
     >
       <div className="section-container flex items-center justify-between py-3 sm:py-4">
         <Link
@@ -32,7 +33,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav aria-label="Основная навигация">
+        <nav aria-label="Основная навигация" className="hidden sm:block">
           <ul className="flex items-center gap-4 sm:gap-8 font-mono text-[11px] sm:text-xs uppercase tracking-[0.3em] text-[#00ff9d]">
             {navItems.map((item) => (
               <li key={item.href}>
