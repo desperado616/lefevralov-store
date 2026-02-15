@@ -19,23 +19,28 @@ export const metadata: Metadata = {
   title: "Lefevralov Store",
   description:
     "Только оригинальный шмот. Мы ценим личное общение и доверие клиентов, поэтому уделяем много внимания сервису и деталям.",
-  metadataBase: new URL("https://lefevralov-store.example.com"),
+  metadataBase: new URL("https://lefevralov-store.vercel.app"),
   openGraph: {
     title: "Lefevralov Store",
     description:
       "Только оригинальный шмот. Мы ценим личное общение и доверие клиентов, поэтому уделяем много внимания сервису и деталям.",
     type: "website",
-    url: "https://lefevralov-store.example.com"
+    url: "https://lefevralov-store.vercel.app"
   },
   alternates: {
     canonical: "/"
   },
   icons: {
-    icon: "/ic.svg",
+    icon: [
+      { url: "/ic.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" }
+    ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png"
   }
 };
+
+export const viewport = { width: "device-width", initialScale: 1, themeColor: "#0b0b10" };
 
 export default function RootLayout({
   children

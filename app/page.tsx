@@ -11,7 +11,8 @@ export default function HomePage() {
       <Header />
       <main
         id="main"
-        className="pt-24 md:pt-28 space-y-20 sm:space-y-24 md:space-y-32"
+        role="main"
+        className="min-h-screen pt-24 md:pt-28 pb-8 space-y-20 sm:space-y-24 md:space-y-32 pl-[env(safe-area-inset-left)] pr-[env(safe-area-inset-right)]"
       >
         <Hero />
         <WorksSection />

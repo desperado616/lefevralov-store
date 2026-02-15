@@ -2,20 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  @apply bg-brand-navy text-white scroll-smooth;
-  /* Прячем стандартную полосу прокрутки, оставляя скролл */
-  scrollbar-width: none;
-}
-
-body {
-  font-family: theme("fontFamily.sans");
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
+@layer base {
+  html {
+    @apply scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-brand-navy text-white antialiased;
+    font-family: theme("fontFamily.sans");
+    scrollbar-width: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 .section-container {
@@ -24,6 +31,7 @@ body::-webkit-scrollbar {
 
 .section-title {
   @apply font-serif text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-brand-gold mb-6;
+  text-shadow: 0 2px 20px rgba(194, 161, 91, 0.12);
 }
 
 .section-subtitle {
@@ -31,7 +39,11 @@ body::-webkit-scrollbar {
 }
 
 .glass-card {
-  @apply bg-slate-900/80 border border-white/10 backdrop-blur-md shadow-card;
+  @apply bg-slate-900/85 border border-white/10 backdrop-blur-md shadow-card;
+  transition: box-shadow 0.3s ease;
+}
+.glass-card:hover {
+  box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(194,161,91,0.12);
 }
 
 /* Glitch-эффект для заголовка на hero */
@@ -54,30 +66,38 @@ body::-webkit-scrollbar {
   animation: glitch-jump 300ms ease-in-out;
 }
 
-/* Глобальный шум и легкие «царапины» поверх фона */
+/* Грязный шум и царапины поверх фона */
 .page-noise {
   background-image:
-    repeating-linear-gradient(
-      90deg,
-      rgba(148, 163, 184, 0.14) 0,
-      rgba(148, 163, 184, 0.14) 1px,
-      transparent 1px,
-      transparent 3px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(15, 23, 42, 0.7) 0,
-      rgba(15, 23, 42, 0.7) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    radial-gradient(circle at 10% 20%, rgba(148, 163, 184, 0.18), transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(30, 64, 175, 0.24), transparent 55%);
-  opacity: 0.35;
+    repeating-linear-gradient(90deg, rgba(148,163,184,0.12) 0, rgba(148,163,184,0.12) 1px, transparent 1px, transparent 2px),
+    repeating-linear-gradient(0deg, rgba(15,23,42,0.6) 0, rgba(15,23,42,0.6) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(78deg, rgba(0,0,0,0.04) 0, transparent 1px, transparent 4px),
+    radial-gradient(circle at 10% 20%, rgba(148,163,184,0.2), transparent 50%),
+    radial-gradient(circle at 85% 75%, rgba(30,64,175,0.22), transparent 50%);
+  opacity: 0.45;
   mix-blend-mode: soft-light;
 }
 
-/* Небольшие рваные стикеры для карточек */
+.dirty-vignette { box-shadow: inset 0 0 120px rgba(0,0,0,0.22); }
+.dirty-vignette-sm { box-shadow: inset 0 0 60px rgba(0,0,0,0.12); }
+
 .sticker-label {
   clip-path: polygon(0 0, 100% 0, 96% 40%, 100% 80%, 0 100%, 4% 60%, 0 20%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.link-underline { @apply relative; }
+.link-underline::after {
+  content: ""; @apply absolute left-0 bottom-0 h-px w-0 bg-brand-gold transition-all duration-300;
+}
+.link-underline:hover::after, .link-underline:focus-visible::after { @apply w-full; }
+
+.glow-on-hover:hover { box-shadow: 0 0 28px rgba(194,161,91,0.18); }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 0.75; }
+}
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
 }
