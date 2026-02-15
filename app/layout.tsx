@@ -17,23 +17,26 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: "Lefevralov Store",
-  description:
-    "Только оригинальный шмот. Мы ценим личное общение и доверие клиентов, поэтому уделяем много внимания сервису и деталям.",
+  description: "Только оригинальный шмот.",
   metadataBase: new URL("https://lefevralov-store.vercel.app"),
   openGraph: {
     title: "Lefevralov Store",
-    description:
-      "Только оригинальный шмот. Мы ценим личное общение и доверие клиентов, поэтому уделяем много внимания сервису и деталям.",
+    description: "Только оригинальный шмот.",
     type: "website",
     url: "https://lefevralov-store.vercel.app"
   },
   alternates: {
     canonical: "/"
   },
+  robots: {
+    index: true,
+    follow: true
+  },
   icons: {
     icon: [
-      { url: "/ic.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" }
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/ic.svg", type: "image/svg+xml" }
     ],
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png"
@@ -51,6 +54,7 @@ export default function RootLayout({
     <html
       lang="ru"
       className={`${inter.variable} ${cormorant.variable} scroll-smooth`}
+      suppressHydrationWarning
     >
       <body className={`${inter.className} bg-brand-navy text-white`}>
         {/* Скрытая ссылка для быстрого перехода к контенту с клавиатуры */}

@@ -11,6 +11,9 @@
     @apply bg-brand-navy text-white antialiased;
     font-family: theme("fontFamily.sans");
     scrollbar-width: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
@@ -40,7 +43,7 @@
 
 .glass-card {
   @apply bg-slate-900/85 border border-white/10 backdrop-blur-md shadow-card;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 .glass-card:hover {
   box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(194,161,91,0.12);

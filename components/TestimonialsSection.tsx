@@ -3,7 +3,7 @@
 // Секция слайдера с отзывами клиентов и рейтингом.
 // Фото клиентов заменены на стилизованную круглую заглушку.
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type Testimonial = {
@@ -17,23 +17,23 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Павел",
-    city: "Копейск",
-    text: "Бля заебись шмот, но у меня вчера глистов нашли поэтому три звезды",
-    rating: 3
+    name: "Кирилл",
+    city: "из Telegram",
+    text: "Купил ЛВ у лефевралов стор, спасибо большое, отличное качество цена и быстро отправил, все советую, брал по пп, никаких проблем",
+    rating: 5
   },
   {
     id: 2,
-    name: "Влад",
-    city: "Челябинск",
-    text: "заебись рарный шмот ракаю это дерьмо 5 звезд",
-    rating: 2
+    name: "Лена",
+    city: "из Авито",
+    text: "Благодарю продавца за отзывчивость и быструю отправку. Сумка очень понравилась. Наилучшие рекомендации!",
+    rating: 5
   },
   {
     id: 3,
-    name: "ishowspeed",
-    city: "Чебоксары",
-    text: "MY NAME IS THE EMO",
+    name: "Дима",
+    city: "из Telegram",
+    text: "брал припеем, продавец оперативно помог с размерами, быстро отправил, и вообще поло четкое. буду обращаться еще",
     rating: 5
   }
 ];
@@ -51,14 +51,14 @@ export function TestimonialsSection() {
 
   const current = testimonials[index];
 
-  function handleChange(newIndex: number) {
+  const handleChange = useCallback((newIndex: number) => {
     setIndex((prev) => {
       if (newIndex === prev) return prev;
       if (newIndex < 0) return testimonials.length - 1;
       if (newIndex >= testimonials.length) return 0;
       return newIndex;
     });
-  }
+  }, []);
 
   return (
     <section
@@ -69,7 +69,7 @@ export function TestimonialsSection() {
       <div className="relative">
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="-rotate-[2.2deg]">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2">voices</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2" aria-hidden="true">voices</p>
             <h2 id="testimonials-title" className="section-title">
               Что говорят о нас
             </h2>
@@ -104,8 +104,8 @@ export function TestimonialsSection() {
           <div
             className="glass-card glow-on-hover dirty-vignette-sm relative overflow-hidden rounded-3xl border-t border-white/20 p-7 sm:p-9 -rotate-[2.5deg] transition-transform duration-200 hover:-translate-y-1"
           >
-            <span className="absolute right-6 top-6 text-[9px] uppercase tracking-[0.3em] text-gray-500/70 rotate-6">review</span>
-            <span className="absolute left-6 bottom-6 text-[8px] uppercase tracking-[0.28em] text-gray-600/80 -rotate-3">real feedback</span>
+            <span className="absolute right-6 top-6 text-[9px] uppercase tracking-[0.3em] text-gray-500/70 rotate-6" aria-hidden="true">review</span>
+            <span className="absolute left-6 bottom-6 text-[8px] uppercase tracking-[0.28em] text-gray-600/80 -rotate-3" aria-hidden="true">real feedback</span>
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}

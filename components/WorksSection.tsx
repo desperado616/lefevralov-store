@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const works = [
   { name: "Louis Vuitton Trainer", size: "Размер 43", price: "19 900 ₽", image: "/products/1.jpg" },
-  { name: "Jimmy Choo High Top", size: "Размер 42, 27 см", price: "14 900 ₽", image: "/products/2.jpg" },
+  { name: "Jimmy Choo High Top", size: "Размер 42, 27 см", price: "10 990 ₽", image: "/products/2.jpg" },
   { name: "Dolce&Gabbana", size: "Размер S-M", price: "8 790 ₽", image: "/products/3.jpg" },
   { name: "Adidas Jeremy Scott", size: "Размер 40", price: "7 790 ₽", image: "/products/4.jpg" },
   { name: "Dolce&Gabbana", size: "Размер M", price: "18 990 ₽", image: "/products/5.jpg" },
@@ -26,16 +26,16 @@ export function WorksSection() {
     >
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="rotate-[-1.2deg]">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2">catalog</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2" aria-hidden="true">catalog</p>
           <h2 id="works-title" className="section-title">
             Наша одежда на прилавке
           </h2>
-          <p className="section-subtitle">Только оригинальный шмот.</p>
+          <p className="section-subtitle">Only authentic clothes.</p>
         </div>
         <p className="text-sm text-gray-400 rotate-[0.5deg]">*Узнавайте наличие и дропы у владельца магазина.</p>
       </div>
 
-      <div className="mt-4 hidden items-center justify-between text-[10px] uppercase tracking-[0.26em] text-gray-500 md:flex rotate-[-0.5deg]">
+      <div className="mt-4 hidden items-center justify-between text-[10px] uppercase tracking-[0.26em] text-gray-500 md:flex rotate-[-0.5deg]" aria-hidden="true">
         <span>grid / 3 x 3 showcase</span>
         <span>009 pieces / curated selection</span>
       </div>
@@ -61,9 +61,10 @@ export function WorksSection() {
                 className="object-cover transition-transform duration-300 ease-out group-hover/card:scale-[1.03]"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 priority={index < 3}
+                loading={index < 3 ? undefined : "lazy"}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-200 group-hover/card:opacity-100 pointer-events-none" aria-hidden />
-              <span className="absolute left-4 top-4 flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-black/50 text-[10px] font-bold text-brand-gold">{index + 1}</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-200 group-hover/card:opacity-100 pointer-events-none" aria-hidden="true" />
+              <span className="absolute left-4 top-4 flex h-7 w-7 items-center justify-center rounded-full border border-white/20 bg-black/50 text-[10px] font-bold text-brand-gold" aria-label={`Товар ${index + 1}`}>{index + 1}</span>
               <div className="sticker-label absolute right-4 top-4 flex h-7 w-12 rotate-3 items-center justify-center border border-white/30 bg-black/60 text-[8px] uppercase tracking-[0.2em] text-gray-200/90">drop</div>
             </div>
             <div className="relative flex flex-1 flex-col justify-between p-5 sm:p-6">
@@ -73,7 +74,7 @@ export function WorksSection() {
                 <p className="mt-3 text-xl font-bold text-brand-gold sm:text-2xl drop-shadow-[0_0_20px_rgba(194,161,91,0.12)]">{work.price}</p>
               </div>
               <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-gold/80">Узнавайте наличие у владельца</p>
-              <span className="absolute bottom-4 right-4 text-[8px] uppercase tracking-[0.2em] text-gray-600">piece</span>
+              <span className="absolute bottom-4 right-4 text-[8px] uppercase tracking-[0.2em] text-gray-600" aria-hidden="true">piece</span>
             </div>
             </motion.article>
           );
