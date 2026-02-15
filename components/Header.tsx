@@ -19,8 +19,7 @@ export function Header() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl"
-      style={{ position: 'fixed' }}
+      className="static sm:fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl"
     >
       <div className="section-container flex items-center justify-between py-3 sm:py-4">
         <Link
