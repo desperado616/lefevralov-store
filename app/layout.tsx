@@ -18,12 +18,12 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Lefevralov Store",
   description:
-    "Lefevralov Store — презентационная площадка эксклюзивной одежды ручной работы. Элегантность, качество и внимание к деталям.",
+    "Только оригинальный шмот. Мы ценим личное общение и доверие клиентов, поэтому уделяем много внимания сервису и деталям.",
   metadataBase: new URL("https://lefevralov-store.example.com"),
   openGraph: {
     title: "Lefevralov Store",
     description:
-      "Эксклюзивная одежда ручной работы — элегантность в каждой детали.",
+      "Только оригинальный шмот. Мы ценим личное общение и доверие клиентов, поэтому уделяем много внимания сервису и деталям.",
     type: "website",
     url: "https://lefevralov-store.example.com"
   },
