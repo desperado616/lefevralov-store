@@ -38,7 +38,7 @@ export function ContactSection() {
                   <span>Telegram</span>
                 </Link>
                 <Link
-                  href="https://vk.com"
+                  href="https://vk.ru/13yolovesfortnite"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-slate-900/80 px-4 py-2 text-sm text-gray-100 shadow-sm shadow-black/30 transition-colors hover:border-brand-gold hover:text-brand-gold"
@@ -110,7 +110,7 @@ export function ContactSection() {
               всё в нашем сообществе.
             </p>
             <Link
-              href="https://vk.com"
+              href="https://vk.ru/13yolovesfortnite"
               target="_blank"
               rel="noreferrer"
               className="mt-4 inline-flex items-center justify-center rounded-full border border-brand-gold/60 px-5 py-2 text-sm font-medium text-brand-gold transition-colors duration-300 hover:bg-brand-gold hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
