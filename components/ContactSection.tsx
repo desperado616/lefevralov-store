@@ -10,7 +10,7 @@ export function ContactSection() {
     <section
       id="contacts"
       aria-labelledby="contacts-title"
-      className="section-container py-16 sm:py-24 md:py-28"
+      className="section-container py-10 sm:py-16 md:py-20"
     >
       <div className="grid gap-12 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1.2fr)] items-start">
         <div className="space-y-2 -rotate-[0.8deg]">
