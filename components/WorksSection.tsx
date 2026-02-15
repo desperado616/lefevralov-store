@@ -49,7 +49,7 @@ export function WorksSection() {
     <section
       id="catalog"
       aria-labelledby="works-title"
-      className="section-container py-20 sm:py-24 md:py-32"
+      className="section-container py-12 sm:py-16 md:py-20"
     >
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div>
