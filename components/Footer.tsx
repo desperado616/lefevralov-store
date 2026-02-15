@@ -26,7 +26,7 @@ export function Footer() {
             </Link>
             <span className="text-gray-600">•</span>
             <Link
-              href="https://vk.com"
+              href="https://vk.ru/13yolovesfortnite"
               target="_blank"
               rel="noreferrer"
               className="text-gray-300 transition-colors hover:text-brand-gold"
