@@ -64,7 +64,7 @@ export function TestimonialsSection() {
     <section
       id="reviews"
       aria-labelledby="testimonials-title"
-      className="section-container py-16 sm:py-24 md:py-28"
+      className="section-container py-10 sm:py-16 md:py-20"
     >
       <div className="relative">
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
