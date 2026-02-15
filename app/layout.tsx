@@ -31,10 +31,7 @@ export const metadata: Metadata = {
     canonical: "/"
   },
   icons: {
-    icon: [
-      { url: "/ic.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" }
-    ],
+    icon: "/ic.svg",
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png"
   }
