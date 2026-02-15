@@ -54,7 +54,7 @@ export function WorksSection() {
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div>
           <h2 id="works-title" className="section-title">
-            Лучшие примеры нашей одежды
+            Наша одежда на прилавке
           </h2>
           <p className="section-subtitle">Только оригинальный шмот.</p>
         </div>
