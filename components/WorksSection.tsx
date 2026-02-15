@@ -72,7 +72,7 @@ export function WorksSection() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.1 }}
         variants={{
           hidden: {},
           visible: {
@@ -81,20 +81,19 @@ export function WorksSection() {
             }
           }
         }}
-        className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+        className="mt-10 grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3"
       >
         {works.map((work, index) => {
           const tiltClass = index % 2 === 0 ? "-rotate-[1deg]" : "rotate-[1deg]";
           return (
             <motion.article
               key={work.name}
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: { opacity: 1, y: 0 }
-              }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
               whileHover={{ y: -6 }}
               transition={{ type: "spring", stiffness: 260, damping: 24 }}
-              className={`glass-card flex flex-col overflow-hidden rounded-2xl ${tiltClass}`}
+              className={`glass-card flex flex-col overflow-visible rounded-2xl ${tiltClass}`}
             >
             {/* Грязная графическая заглушка вместо фото изделия */}
             <div className="relative flex h-64 w-full items-center justify-center overflow-hidden bg-[radial-gradient(circle_at_top,_rgba(148,163,184,0.18),_transparent_60%)] bg-slate-900">
