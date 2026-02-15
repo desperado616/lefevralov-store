@@ -45,7 +45,7 @@ export function Hero() {
         SIZE CURVE / OVERSIZED FIT
       </motion.div>
 
-      <div className="relative section-container flex min-h-screen flex-col items-center justify-center pt-28 pb-16">
+      <div className="relative section-container flex min-h-screen flex-col items-center justify-center pt-4 sm:pt-28 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
