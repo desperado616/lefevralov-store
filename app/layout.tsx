@@ -16,7 +16,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Lefevralov Store — Элегантность в каждой детали",
+  title: "Lefevralov Store",
   description:
     "Lefevralov Store — презентационная площадка эксклюзивной одежды ручной работы. Элегантность, качество и внимание к деталям.",
   metadataBase: new URL("https://lefevralov-store.example.com"),
