@@ -16,8 +16,12 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Cormorant Garamond", "serif"]
+        // Мягкий базовый шрифт интерфейса.
+        sans: ["var(--font-rubik)", "system-ui", "sans-serif"],
+        // Элегантный шрифт для крупных заголовков.
+        serif: ["var(--font-cormorant)", "serif"],
+        // Отдельный шрифт для полупрозрачных фоновых надписей.
+        label: ["var(--font-inter)", "system-ui", "sans-serif"]
       },
       boxShadow: {
         card: "0 18px 40px rgba(15,23,42,0.35)",

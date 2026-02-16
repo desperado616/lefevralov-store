@@ -29,7 +29,9 @@ export function Header() {
         >
           <span className="font-serif text-lg md:text-xl -skew-x-1">Lefevralov Store</span>
         </Link>
-        <span className="absolute left-1/2 -translate-x-1/2 hidden lg:block text-[9px] uppercase tracking-[0.32em] text-gray-600 pointer-events-none" aria-hidden="true">menu</span>
+        <span className="absolute left-1/2 -translate-x-1/2 hidden lg:block text-[9px] uppercase tracking-[0.32em] text-gray-600 pointer-events-none font-label" aria-hidden="true">
+          menu
+        </span>
         <nav aria-label="Основная навигация" className="hidden sm:block">
           <ul className="flex items-center gap-6 sm:gap-8 font-mono text-[11px] sm:text-xs uppercase tracking-[0.3em] text-[#00ff9d]">
             {navItems.map((item) => (

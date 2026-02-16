@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Cormorant_Garamond, Rubik } from "next/font/google";
 import "./globals.css";
 
-// Подключаем более спокойные и «high fashion» шрифты.
+// Базовый мягкий шрифт для всего интерфейса.
+const rubik = Rubik({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600"],
+  variable: "--font-rubik"
+});
+
+// Акцентный шрифт для фоновых/полупрозрачных подписей.
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500"],
   variable: "--font-inter"
 });
 
+// Элегантный засечковый шрифт для заголовков.
 const cormorant = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700"],
@@ -53,10 +61,10 @@ export default function RootLayout({
   return (
     <html
       lang="ru"
-      className={`${inter.variable} ${cormorant.variable} scroll-smooth`}
+      className={`${rubik.variable} ${cormorant.variable} ${inter.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-      <body className={`${inter.className} bg-brand-navy text-white`}>
+      <body className={`${rubik.className} bg-brand-navy text-white`}>
         {/* Скрытая ссылка для быстрого перехода к контенту с клавиатуры */}
         <a
           href="#main"

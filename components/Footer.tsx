@@ -8,9 +8,14 @@ export function Footer() {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-gold/30 to-transparent" />
       <div className="section-container flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-2 text-sm text-gray-400 rotate-[-0.5deg]">
-          <p className="text-[9px] uppercase tracking-[0.3em] text-gray-600" aria-hidden="true">handpicked</p>
+          <p className="text-[9px] uppercase tracking-[0.3em] text-gray-600 font-label" aria-hidden="true">
+            handpicked
+          </p>
           <p className="font-serif text-base text-white">© 2026 Lefevralov Store. Все права защищены.</p>
-          <p>Уличная высокая мода, лимитированные дропы и вещи, которые живут дольше одного сезона.</p>
+          <p>
+            Уличная высокая мода, лимитированные дропы и вещи, которые живут дольше одного сезона.
+            Персональный подбор и сопровождение каждой покупки.
+          </p>
         </div>
         <div className="flex flex-col items-start gap-3 text-sm sm:items-end rotate-[0.5deg]">
           <div className="flex gap-4">

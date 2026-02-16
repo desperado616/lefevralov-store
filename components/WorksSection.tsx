@@ -13,7 +13,7 @@ const works = [
   { name: "Dolce&Gabbana", size: "Размер M", price: "18 990 ₽", image: "/products/5.jpg" },
   { name: "Versace", size: "Размер 41, 26 см", price: "7 090 ₽", image: "/products/6.jpg" },
   { name: "Гоша Рубчинский", size: "Размер M", price: "5 890 ₽", image: "/products/7.jpg" },
-  { name: "Dolce&Gabbana Cap", size: "Размер uni", price: "3 190 ₽", image: "/products/8.jpg" },
+  { name: "Dolce&Gabbana Cap", size: "Размер Unisex", price: "3 190 ₽", image: "/products/8.jpg" },
   { name: "Louis Vuitton Frontrow Red", size: "Размер 41.5, 26.5 по стельке", price: "12 990 ₽", image: "/products/9.jpg" }
 ];
 
@@ -26,7 +26,9 @@ export function WorksSection() {
     >
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="rotate-[-1.2deg]">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2" aria-hidden="true">catalog</p>
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2 font-label" aria-hidden="true">
+            catalog
+          </p>
           <h2 id="works-title" className="section-title">
             Наша одежда на прилавке
           </h2>
@@ -35,7 +37,10 @@ export function WorksSection() {
         <p className="text-sm text-gray-400 rotate-[0.5deg]">*Узнавайте наличие и дропы у владельца магазина.</p>
       </div>
 
-      <div className="mt-4 hidden items-center justify-between text-[10px] uppercase tracking-[0.26em] text-gray-500 md:flex rotate-[-0.5deg]" aria-hidden="true">
+      <div
+        className="mt-4 hidden items-center justify-between text-[10px] uppercase tracking-[0.26em] text-gray-500 md:flex rotate-[-0.5deg] font-label"
+        aria-hidden="true"
+      >
         <span>grid / 3 x 3 showcase</span>
         <span>009 pieces / curated selection</span>
       </div>
@@ -71,7 +76,12 @@ export function WorksSection() {
               <div>
                 <h3 className="font-serif text-xl font-semibold text-white">{work.name}</h3>
                 <p className="mt-2 text-sm text-gray-400">{work.size}</p>
-                <p className="mt-3 text-xl font-bold text-brand-gold sm:text-2xl drop-shadow-[0_0_20px_rgba(194,161,91,0.12)]">{work.price}</p>
+                <p className="mt-3 text-[10px] uppercase tracking-[0.26em] text-brand-gold/50">
+                  Lefevralov price
+                </p>
+                <p className="mt-1 text-xl font-bold text-brand-gold sm:text-2xl drop-shadow-[0_0_20px_rgba(194,161,91,0.12)]">
+                  {work.price}
+                </p>
               </div>
               <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-gold/80">Узнавайте наличие у владельца</p>
               <span className="absolute bottom-4 right-4 text-[8px] uppercase tracking-[0.2em] text-gray-600" aria-hidden="true">piece</span>

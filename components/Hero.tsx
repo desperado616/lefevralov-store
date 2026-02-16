@@ -26,17 +26,36 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-30 mix-blend-soft-light bg-[repeating-linear-gradient(112deg,rgba(148,163,184,0.2)_0,rgba(148,163,184,0.2)_1px,transparent_1px,transparent_4px)]" />
       <div className="pointer-events-none absolute inset-0 dirty-vignette" />
 
-      <div className="pointer-events-none absolute left-6 top-32 hidden flex-col text-[10px] uppercase tracking-[0.28em] text-gray-500 md:flex -rotate-2 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "both" }} aria-hidden="true">
+      <div
+        className="pointer-events-none absolute left-6 top-32 hidden flex-col text-[10px] uppercase tracking-[0.28em] text-gray-500 md:flex -rotate-2 animate-fade-in font-label"
+        style={{ animationDelay: "0.4s", animationFillMode: "both" }}
+        aria-hidden="true"
+      >
         <span>LFS / DROP 001</span>
         <span className="mt-1 text-gray-600">street tailoring archive</span>
       </div>
-      <div className="pointer-events-none absolute bottom-20 right-6 hidden text-[10px] uppercase tracking-[0.3em] text-gray-500 md:block rotate-3 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "both" }} aria-hidden="true">
+      <div
+        className="pointer-events-none absolute bottom-20 right-6 hidden text-[10px] uppercase tracking-[0.3em] text-gray-500 md:block rotate-3 animate-fade-in font-label"
+        style={{ animationDelay: "0.6s", animationFillMode: "both" }}
+        aria-hidden="true"
+      >
         SIZE CURVE / OVERSIZED FIT
       </div>
-      <div className="pointer-events-none absolute top-28 right-8 hidden text-[9px] uppercase tracking-[0.32em] text-gray-600 md:block rotate-6 animate-fade-in" style={{ animationDelay: "0.9s", animationFillMode: "both" }} aria-hidden="true">original only</div>
+      <div
+        className="pointer-events-none absolute top-28 right-8 hidden text-[9px] uppercase tracking-[0.32em] text-gray-600 md:block rotate-6 animate-fade-in font-label"
+        style={{ animationDelay: "0.9s", animationFillMode: "both" }}
+        aria-hidden="true"
+      >
+        original only
+      </div>
 
       <div className="relative section-container flex min-h-screen flex-col items-center justify-center pt-4 sm:pt-28 pb-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} className="max-w-3xl space-y-6 text-center -skew-x-1">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="max-w-3xl space-y-6 text-center -skew-x-1"
+        >
           <h1
             id="hero-title"
             className={`${bebas.className} glitch-hover text-6xl sm:text-7xl md:text-8xl font-semibold tracking-[0.08em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.4)]`}
@@ -50,6 +69,10 @@ export function Hero() {
           </h1>
           <p className="font-mono text-xs sm:text-sm text-brand-light/80" aria-hidden="true" />
 
+          <p className="mx-auto max-w-xl text-sm sm:text-base text-gray-200/90">
+            Отборный люкс‑streetwear с самыми низкими ценами.
+          </p>
+
           <div className="flex flex-wrap items-center justify-center gap-4 pt-6">
             <Link
               href="#catalog"
@@ -62,7 +85,7 @@ export function Hero() {
                 IT&apos;S LIT.
               </span>
             </Link>
-            <span className="text-xs sm:text-sm uppercase tracking-[0.22em] text-gray-400" aria-hidden="true">
+            <span className="text-xs sm:text-sm uppercase tracking-[0.22em] text-gray-400 font-label" aria-hidden="true">
               limited drops / made to order
             </span>
           </div>

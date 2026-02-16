@@ -46,7 +46,10 @@
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 .glass-card:hover {
-  box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(194,161,91,0.12);
+  box-shadow:
+    0 24px 48px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(194,161,91,0.12),
+    0 0 40px rgba(194,161,91,0.18);
 }
 
 /* Glitch-эффект для заголовка на hero */

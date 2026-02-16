@@ -69,7 +69,9 @@ export function TestimonialsSection() {
       <div className="relative">
         <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
           <div className="-rotate-[2.2deg]">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2" aria-hidden="true">voices</p>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-2 font-label" aria-hidden="true">
+              voices
+            </p>
             <h2 id="testimonials-title" className="section-title">
               Что говорят о нас
             </h2>
@@ -104,8 +106,18 @@ export function TestimonialsSection() {
           <div
             className="glass-card glow-on-hover dirty-vignette-sm relative overflow-hidden rounded-3xl border-t border-white/20 p-7 sm:p-9 -rotate-[2.5deg] transition-transform duration-200 hover:-translate-y-1"
           >
-            <span className="absolute right-6 top-6 text-[9px] uppercase tracking-[0.3em] text-gray-500/70 rotate-6" aria-hidden="true">review</span>
-            <span className="absolute left-6 bottom-6 text-[8px] uppercase tracking-[0.28em] text-gray-600/80 -rotate-3" aria-hidden="true">real feedback</span>
+            <span
+              className="absolute right-6 top-6 text-[9px] uppercase tracking-[0.3em] text-gray-500/70 rotate-6 font-label"
+              aria-hidden="true"
+            >
+              review
+            </span>
+            <span
+              className="absolute left-6 bottom-6 text-[8px] uppercase tracking-[0.28em] text-gray-600/80 -rotate-3 font-label"
+              aria-hidden="true"
+            >
+              real feedback
+            </span>
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
@@ -116,6 +128,9 @@ export function TestimonialsSection() {
               >
                 <p className="text-sm font-medium uppercase tracking-[0.25em] text-brand-gold/80">
                   Отзыв
+                </p>
+                <p className="mt-2 text-xs uppercase tracking-[0.22em] text-gray-400">
+                  5.0 / 5.0 · проверенные сделки
                 </p>
                 <p className="mt-4 text-lg sm:text-xl text-gray-100">
                   "{current.text}"
